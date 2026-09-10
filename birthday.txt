@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Happy Birthday Sara 🎂</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background: rgba(0,0,0,0.25);
+      pointer-events: none;
+    }
+
+    .overlay h1 {
+      font-size: 42px;
+      text-shadow: 0 0 15px #fff, 0 0 30px #ff69b4;
+      animation: glow 2s infinite alternate;
+    }
+
+    .overlay p {
+      margin-top: 12px;
+      font-size: 20px;
+      letter-spacing: 2px;
+    }
+
+    .date {
+      margin-top: 8px;
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    @keyframes glow {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(1.08);
+      }
+    }
+
+    .start {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 30px;
+      background: white;
+      color: #111;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 5;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Put your video file in the same folder -->
+  <video id="birthdayVideo" autoplay muted loop playsinline>
+    <source src="1000036776.mp4" type="video/mp4">
+  </video>
+
+  <div class="overlay">
+    <h1>Happy Birthday Sara 🎂</h1>
+    <p>Wishing you endless happiness ✨</p>
+    <div class="date">11 • 09 • 2010 ❤️</div>
+  </div>
+
+  <button class="start" onclick="startVideo()">▶ Start</button>
+
+</div>
+
+<script>
+  const video = document.getElementById("birthdayVideo");
+  const button = document.querySelector(".start");
+
+  function startVideo() {
+    video.muted = false;
+    video.play();
+    button.style.display = "none";
+  }
+</script>
+
+</body>
+</html>
